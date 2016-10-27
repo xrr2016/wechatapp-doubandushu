@@ -1,0 +1,13 @@
+.rank{
+    margin:0;
+    height: 100%;
+    width: 100%;
+    padding-top:30px;
+}
+.title{
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    color: #454545;
+    font-weight: bold;
+}

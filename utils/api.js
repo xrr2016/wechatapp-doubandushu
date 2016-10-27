@@ -1,6 +1,8 @@
-const API = "https://api.douban.com/v2/book/"
+const book = "https://api.douban.com/v2/book/",
+      movies = "https://api.douban.com/v2/movie/top250"
 
 module.exports =  {
-    searchBooks:API+"search",
-    searchBookById:API 
+    searchBooks:book+"search",
+    searchBookById:book,
+    searchMovies:movies
 }

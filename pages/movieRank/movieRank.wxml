@@ -1,0 +1,21 @@
+<view class="rank">
+    <text class="title">豆瓣电影Top30</text>
+    <scroll-view scroll-y="true">
+            <block wx:for="{{movies}}">
+                <view>
+                    <text class="movie-name">{{item}}</text>
+                </view>
+                <view>
+                    <image src="{{item}}" class="movie-avatar"></image>
+                </view>
+                <view class="movie-info">
+
+                </view>
+            
+            </block>
+    </scroll-view>
+</view>
+
+<loading hidden="{{hidden}}">
+    Loading...
+</loading>

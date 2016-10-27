@@ -1,20 +1,34 @@
+const  api = require('../../utils/api.js')
+
 Page({
   data:{
-    // text:"这是一个页面"
+    movies:[],
+    hidden:false
   },
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+  onLoad:function(){
+    // this.getMovies("30")
+    wx.request({
+      url:"https://api.douban.com/v2/movie/coming_soon",
+      method:"GET",
+      success:function(res){
+        console.log(res)
+      }
+    })
   },
-  onReady:function(){
-    // 页面渲染完成
-  },
-  onShow:function(){
-    // 页面显示
-  },
-  onHide:function(){
-    // 页面隐藏
-  },
-  onUnload:function(){
-    // 页面关闭
-  }
+  // getMovies:function(num){
+  //   let url = api.searchMovies +`?count=${num}`,
+  //       self = this;
+  //   wx.request({
+  //     url:url,
+  //     method:"GET",
+  //     success:function(res){
+  //       let data = res.subjects
+  //       console.log(data)
+  //       self.setData({
+  //         hidden:true,
+  //         movies:data
+  //       })
+  //     }
+  //   })
+  // }
 })
