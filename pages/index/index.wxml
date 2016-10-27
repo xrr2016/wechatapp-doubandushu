@@ -1,0 +1,30 @@
+<view class="search-container">
+    <input class="search-input" type="text" placeholder="请输入图书名称" bindinput="searchInput" ><icon type="search" size="20" catchtap="searchBooks" /></input>
+</view>
+
+<scroll-view class="books" scroll-y="true">
+    <view class="notfound">
+        <icon type="cancel" color="red" size="42" />    
+        <view>
+           <text>没有找到相关图书</text>
+        </view>
+    </view>
+
+        <view class="book" >
+            <view class="book-cover"> 
+                <image src="{{item.cover}}"></image>
+            </view>
+            
+            <view >
+                <text class="book-title">{{bookTitle}}</text>
+            </view>
+            <view>
+                <text class="book-time">{{bookTime}}</text>
+            </view>
+        </view>
+
+
+    <view class="footer">
+        <icon type="waiting" size="32" color="#B28FCE" />
+    </view>
+</scroll-view>

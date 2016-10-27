@@ -1,12 +1,33 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/detail/detail",
+    "pages/movieRank/movieRank"
   ],
-  "window":{
+  "window": {
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+    "navigationBarBackgroundColor" : "#B28FCE",
+    "navigationBarTitleText": "豆瓣图书",
+    "navigationBarTextStyle":"#fff",
+    "backgroundColor":"#ddd",
+    "enablePullDownRefresh":true
+  },
+   "tabBar":{
+    "list":[{
+          "pagePath":"pages/index/index",
+          "text":"图书",
+          "iconPath":"/assets/icons/book.png",
+          "selectedIconPath":"/assets/icons/book_sel.png"
+      },{
+        "pagePath":"pages/movieRank/movieRank",
+        "text":"电影",
+        "iconPath":"/assets/icons/movie.png",
+        "selectedIconPath":"/assets/icons/movie_sel.png"
+      }],
+      "color":"#ccc",
+      "backgroundColor":"#B28FCE",
+      "borderStyle":"white",
+      "selectedColor":"white"
+  },
+  "debug": true
 }
