@@ -6,7 +6,6 @@ page{
     position: fixed;
     top: 0;
     left: 0;
-    height: 42px;
     width: 97%;
     padding: 0 12rpx;
     background-color: #B28FCE;
@@ -16,20 +15,67 @@ page{
     z-index: 10;
 }
 .search-input{
-    background-color: #f4f4f4;
+    background-color: #fff;
     color: black;
     margin-top: 5px;
     padding: 5px 10px;
-    height: 22px;
+    height: 26px;
     border-radius: 6px;
+    margin-bottom: 12px;
 }
 .notfound{
     display:none;
 }
+.books{
+    position: relative;
+    margin-top:40px;
+    height: 100%;
+    width: 100%;
+    background-color: #f4f4f4;
+}
+.book{
+    width: 92%;
+    border: 1px solid #f4f4f4;
+    padding: 4px auto 0 12px;
+    margin: 12px auto;
+    overflow: hidden;
+    text-align: left;
+    background-color: #fff;
+}
+.book-cover{
+    float: left;
+    margin:4px auto auto 4px;
+}
+.book-cover image{
+    width: 80px;
+    height: 100px;
+}
 
-
-
-.footer{
-    text-align: center;
-    padding: 10rpx 0;
+.book-info{
+    float: right;
+    width: 66%;
+    height: 96%;
+    margin: 12px 12px auto auto;
+    font-size: 16px;
+}
+.book-title{
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 4px auto 12px auto
+}
+.book-author{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    text-align: left;
+    margin:12px 4px 0 30px;
+}
+.book-time{
+    display: inline-block;
+    padding: 0 12px;
+    font-size: 14px;
+    color: #ccc;
+    margin-top:12px;
 }

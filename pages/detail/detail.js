@@ -1,20 +1,32 @@
+const api = require('../../utils/api.js')
+
 Page({
   data:{
-    // text:"这是一个页面"
+    bookid:null,
+    book:{},
+    hidden:false
   },
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+  onLoad:function(opts){
+      this.setData({
+        bookid:opts.id
+      })
+      this.fetchBookData(this.data.bookid)
   },
-  onReady:function(){
-    // 页面渲染完成
-  },
-  onShow:function(){
-    // 页面显示
-  },
-  onHide:function(){
-    // 页面隐藏
-  },
-  onUnload:function(){
-    // 页面关闭
+  fetchBookData:function(id){
+    let url = api.searchBookById,
+        self = this
+    wx.request({
+      url:url + id,
+      method:"GET",
+      success:function(res){
+        let book = res.data
+          self.setData({
+            book:book,
+            hidden:true
+          })
+         console.log(self.data.book) 
+       }
+    })
   }
+  
 })

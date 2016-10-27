@@ -1,30 +1,26 @@
 <view class="search-container">
-    <input class="search-input" type="text" placeholder="请输入图书名称" bindinput="searchInput" ><icon type="search" size="20" catchtap="searchBooks" /></input>
+    <input class="search-input" type="text" placeholder="请输入图书名称" bindinput="searchInput" >
+   	    <icon type="search" size="20" catchtap="searchBooks" />
+    </input>
 </view>
 
 <scroll-view class="books" scroll-y="true">
-    <view class="notfound">
-        <icon type="cancel" color="red" size="42" />    
-        <view>
-           <text>没有找到相关图书</text>
-        </view>
-    </view>
 
-        <view class="book" >
+    <block wx:for="{{books}}">
+
+        <view class="book" bindtap="showBookDetail"  data-bookid="{{item.id}}" >
+
             <view class="book-cover"> 
-                <image src="{{item.cover}}"></image>
+                <image src="{{item.image}}"></image>
             </view>
-            
-            <view >
-                <text class="book-title">{{bookTitle}}</text>
+
+            <view class="book-info">
+                <text class="book-title">{{item.title}}</text>
+                <text class="book-author">{{item.author[0]}}</text>
+                <text class="book-time">{{item.pubdate}}</text>
             </view>
-            <view>
-                <text class="book-time">{{bookTime}}</text>
-            </view>
+
         </view>
 
-
-    <view class="footer">
-        <icon type="waiting" size="32" color="#B28FCE" />
-    </view>
+    </block>
 </scroll-view>

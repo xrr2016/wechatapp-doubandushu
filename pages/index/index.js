@@ -2,10 +2,15 @@ const api = require('../../utils/api.js')
 
 Page({
   data:{
-    searchKey:''
+    searchKey:'',
+    books:[]
   },
   onLoad:function(options){
-    console.log('page loaded')
+    this.setData({
+      searchKey:'',
+      books:[],
+      found:false
+    })
   },
   searchInput:function(e){
     this.setData({
@@ -14,15 +19,25 @@ Page({
   },
   searchBooks:function(){
     let self = this,
-          q  = this.data.searchKey
-    if(!q){return}
+        count = 20,
+        searchKey = this.data.searchKey
+    if(!searchKey){return}
     wx.request({
-      url:api.searchBooks + `?q`,
+      url:api.searchBooks+ `?q=${searchKey}&count=${count}`,
       method:"GET",
-      data:q,
       success:function(res){
-        console.log(res)
+        let books = res.data.books
+        self.setData({
+          books:books,
+          found:true
+        })
       }
+    })
+  },
+  showBookDetail:function(e){
+    let id = e.currentTarget.dataset.bookid;
+    wx.navigateTo({
+      url:"../detail/detail?id=" + id
     })
   }
 })

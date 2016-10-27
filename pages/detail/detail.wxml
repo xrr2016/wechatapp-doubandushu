@@ -1,0 +1,29 @@
+<view class="book">
+    <view class="book-title">{{book.title}}</view>
+    <view class="book-image">
+        <image src="{{book.images.large}}"></image>
+    </view>
+
+    <view class="book-info">
+        <view class="book-meta">作者 : {{book.author[0]}}</view>
+        <view class="book-meta">出版日期 : {{book.pubdate}}</view>
+        <view class="book-meta">出版社 : {{book.publisher}}</view>
+        <view class="book-meta">价格 : {{book.price}}</view>
+    </view>
+
+    <view class="book-intro">
+         简介:
+        <view>
+            <text class="sumary">{{book.summary}}</text>
+        </view>
+        作者简介:
+        <view>
+            <text class="sumary">{{book.author_intro}}</text>
+        </view>
+    </view>
+
+</view>
+
+<loading hidden="{{hidden}}">
+    Loading...
+</loading>
