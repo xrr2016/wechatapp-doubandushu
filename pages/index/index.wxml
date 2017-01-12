@@ -1,6 +1,6 @@
 <view class="search-container">
     <input class="search-input" type="text" placeholder="请输入图书名称" bindinput="searchInput" >
-   	    <icon type="search" size="20" catchtap="searchBooks" />
+   	    <icon type="search" class="search-icon" size="20" catchtap="searchBooks" />
     </input>
 </view>
 
